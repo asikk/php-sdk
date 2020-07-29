@@ -57,7 +57,7 @@ class TransactionBase
     private $orderReference;
 
     /**
-     * @var DateTime
+     * @var DateTime|null
      */
     private $createdDate;
 
@@ -77,7 +77,7 @@ class TransactionBase
     private $status;
 
     /**
-     * @var DateTime
+     * @var DateTime|null
      */
     private $processingDate;
 
@@ -159,11 +159,11 @@ class TransactionBase
      */
     public function __construct(
         $orderReference,
-        DateTime $createdDate,
+        DateTime $createdDate = null,
         $amount,
         $currency,
         $status,
-        DateTime $processingDate,
+        DateTime $processingDate = null,
         $reasonCode,
         $reason,
         $email = null,
@@ -213,7 +213,7 @@ class TransactionBase
     }
 
     /**
-     * @return DateTime
+     * @return DateTime|null
      */
     public function getCreatedDate()
     {
@@ -245,7 +245,7 @@ class TransactionBase
     }
 
     /**
-     * @return DateTime
+     * @return DateTime|null
      */
     public function getProcessingDate()
     {
